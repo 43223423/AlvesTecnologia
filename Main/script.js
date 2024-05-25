@@ -1,3 +1,5 @@
+var WidthScreen = screen.width;
+
 function OpenSideBar() {
   if (
     document.getElementById("conatinerSideBarcontacts").style.display === "flex"
@@ -32,7 +34,6 @@ function OpenSideBar() {
     document.getElementById("SixChart").style.width = "590px";
     document.getElementById("SixChart").style.height = "400px";
   } else {
-    var WidthScreen = screen.width;
     if (WidthScreen <= 400) {
       document.getElementById("subNavBarComponent").style.width = "63%";
       document.getElementById("subNavBarComponent").style.marginRight = "16px";
@@ -184,6 +185,9 @@ function CloseSideBar() {
       document.getElementById("IconX").style.display = "none";
       document.getElementById("IconMenu").style.display = "block";
       document.getElementById("SubContainerNavbar").style.marginLeft = "";
+
+      
+
     } else {
       document.getElementById("containerSideBar").classList.remove("open");
       document.getElementById("IconX").style.display = "none";

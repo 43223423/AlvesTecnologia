@@ -1,4 +1,4 @@
-new Chart(document.getElementById("FirstChart"), {
+var FirstChart = new Chart(document.getElementById("FirstChart"), {
   type: "line",
   data: {
     labels: "       ",
@@ -49,8 +49,8 @@ new Chart(document.getElementById("FirstChart"), {
     ],
   },
   options: {
-    responsive: true, 
-    maintainAspectRatio: false, 
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       y: {
         stacked: true,
@@ -70,8 +70,7 @@ new Chart(document.getElementById("FirstChart"), {
   },
 });
 
-
-new Chart(document.getElementById("SecondChart"), {
+var SecondChart = new Chart(document.getElementById("SecondChart"), {
   type: "bar",
   data: {
     labels: "labels",
@@ -102,6 +101,7 @@ new Chart(document.getElementById("SecondChart"), {
     ],
   },
   options: {
+    responsive: true,
     scales: {
       y: {
         beginAtZero: true,
@@ -110,7 +110,7 @@ new Chart(document.getElementById("SecondChart"), {
   },
 });
 
-new Chart(document.getElementById("ThirdChart"), {
+var ThridChart = new Chart(document.getElementById("ThirdChart"), {
   type: "line",
   data: {
     labels: "       ",
@@ -161,6 +161,7 @@ new Chart(document.getElementById("ThirdChart"), {
     ],
   },
   options: {
+    responsive: true,
     scales: {
       y: {
         stacked: true,
@@ -180,7 +181,7 @@ new Chart(document.getElementById("ThirdChart"), {
   },
 });
 
-new Chart(document.getElementById("FourthChart"), {
+var FourChart = new Chart(document.getElementById("FourthChart"), {
   type: "bar",
   data: {
     labels: "labels",
@@ -211,6 +212,7 @@ new Chart(document.getElementById("FourthChart"), {
     ],
   },
   options: {
+    responsive: true,
     scales: {
       y: {
         beginAtZero: true,
@@ -219,7 +221,7 @@ new Chart(document.getElementById("FourthChart"), {
   },
 });
 
-new Chart(document.getElementById("FiveChart"), {
+var FiveChart = new Chart(document.getElementById("FiveChart"), {
   type: "pie",
   data: {
     labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
@@ -252,7 +254,7 @@ new Chart(document.getElementById("FiveChart"), {
   },
 });
 
-new Chart(document.getElementById("SixChart"), {
+var SixChart = new Chart(document.getElementById("SixChart"), {
   type: "line",
   data: {
     labels: "laels",
@@ -353,4 +355,20 @@ new Chart(document.getElementById("SevenChart"), {
   },
 });
 
+var WidthScreen = screen.width;
 
+var ListCanvas = [
+  FirstChart,
+  SecondChart,
+  ThridChart,
+  FourChart,
+  FiveChart,
+  SixChart,
+];
+
+if (WidthScreen <= 500) {
+  ListCanvas.forEach((item) => {
+    item.canvas.parentNode.style.width = "350px";
+    item.canvas.parentNode.style.heigth = "1000px";
+  });
+}
