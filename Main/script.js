@@ -176,7 +176,7 @@ function CloseSideBar() {
     document.getElementById("SixChart").style.width = "700px";
     document.getElementById("SixChart").style.height = "400px";
   } else {
-    if (WidthScreen <= 400) {
+    if (WidthScreen <= 500) {
       document.getElementById("subNavBarComponent").style.width = "85%";
       document.getElementById("subNavBarComponent").style.marginRight = "0px";
       document.getElementById("containerChart").style.justifyContent = "center";
