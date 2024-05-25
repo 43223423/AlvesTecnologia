@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-bg-color: rgb(17, 17, 31);
+  --main-text-color: white;
+  --main-green-color: rgb(120, 190, 32);
+}
+
+body {
+  height: 100vh;
+}
+
+.ContainerNavbar {
+  width: 100%;
+  height: 100px;
+  background-color: var(--main-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  z-index: 1;
+  position: relative;
+  border-bottom: 3px solid white;
+}
+
+.ContainerMainPrincipal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.containerSideBar {
+  width: 14%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  position: absolute;
+  z-index: 2;
+  display: none;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  position: fixed;
+}
+
+#containerSideBar.open {
+  display: flex;
+  transform: translateX(0);
+}
+
+#SubContainerNavbar {
+  transition: margin-left 0.3s ease;
+}
+
+.ContainerListSidebar {
+  width: 100%;
+  margin-top: 25px;
+}
+.ContainerListSidebar li {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.ContainerListSidebar li:hover {
+  cursor: pointer;
+}
+.ContainerListSidebar li h3 {
+  color: var(--main-text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.conatinerSideBarcontacts {
+  width: 17%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  position: absolute;
+  z-index: 1;
+  display: none;
+  top: 0;
+  right: 0;
+  align-items: flex-start;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+  position: fixed;
+}
+
+.containerCharts {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.containerChart {
+  max-width: 1600px;
+}
+
+.containerUser {
+  margin-top: 80px;
+}
+
+.userPhoto {
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+  border-radius: 50%;
+  display: flex;
+  margin-right: 20px;
+}
+
+.SubTextUser {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.SubContainerNavbar {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logoSite {
+  width: 150px;
+  margin-top: 20px;
+}
+
+select {
+  width: 200px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+.TitleText {
+  color: var(--main-text-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.SubContainerUser {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+.SubTextUser > h3,
+h4 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.SubTextUser > h4 {
+  font-weight: 500;
+}
+.IconNav {
+  width: 30px;
+  height: 30px;
+  color: var(--main-text-color);
+}
+.IconSidebar {
+  width: 25px;
+  height: 25px;
+  color: var(--main-text-color);
+}
+.IconX,
+.IconXContacts {
+  height: 80px;
+  display: none;
+}
+.IconXContacts {
+  margin-right: 30px;
+}
+
+.IconNav:hover {
+  cursor: pointer;
+}
+
+.IconUser {
+  margin-right: 30px;
+  display: block;
+}
+
+.containerChart {
+  width: 100%;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subNavBarComponent {
+  width: 85%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: var(--main-green-color);
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.textUserName {
+  color: var(--main-text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+}
+
+.subContainerChart ul {
+  display: flex;
+}
+
+.subContainerChart ul li {
+  border: 3px solid;
+  border-color: var(--main-green-color);
+  list-style: none;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+#FirstChart {
+  width: 690px;
+  height: 300px;
+}
+
+#SecondChart {
+  width: 555px;
+  height: 300px;
+}
+#ThirdChart {
+  width: 690px;
+  height: 300px;
+}
+#FourthChart {
+  width: 545px;
+  height: 300px;
+}
+#FiveChart {
+  width: 525px;
+  height: 300px;
+}
+
+#SixChart {
+  width: 700px;
+  height: 400px;
+}
+
+/* RESPONSIVIDADE  */
+
+@media screen and (max-width: 1342px) {
+}
+
+@media screen and (max-width: 400px) {
+  .IconUser {
+    display: none;
+  }
+  .selectLanguage {
+    display: none;
+  }
+  .logoSite {
+    width: 103px;
+  }
+
+  .containerSideBar {
+    width: 28%;
+  }
+  .ContainerListSidebar li h3 {
+    margin-left: 10px;
+    font-size: 15px;
+  }
+  .IconSidebar {
+    width: 20px;
+    height: 20px;
+  }
+  #SubContainerNavbar {
+    margin-left: -10%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .subNavBarComponent {
+    width: 85%;
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+  .subContainerChart ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .FirstChart {
+    width: 100px;
+    height: 300px;
+    display: block;
+  }
+
+  #SecondChart {
+    width: 555px;
+    height: 300px;
+  }
+  #ThirdChart {
+    width: 690px;
+    height: 300px;
+  }
+  #FourthChart {
+    width: 545px;
+    height: 300px;
+  }
+  #FiveChart {
+    width: 525px;
+    height: 300px;
+  }
+
+  #SixChart {
+    width: 500px;
+    height: 400px;
+  }
+}
