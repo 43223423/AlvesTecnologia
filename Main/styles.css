@@ -226,28 +226,34 @@ h4 {
 #FirstChart {
   width: 690px;
   height: 300px;
+   display: block;
 }
 
 #SecondChart {
   width: 555px;
   height: 300px;
+   display: block;
 }
 #ThirdChart {
   width: 690px;
   height: 300px;
+   display: block;
 }
 #FourthChart {
   width: 545px;
   height: 300px;
+   display: block;
 }
 #FiveChart {
   width: 525px;
   height: 300px;
+   display: block;
 }
 
 #SixChart {
   width: 700px;
   height: 400px;
+   display: block;
 }
 
 /* RESPONSIVIDADE  */
@@ -292,30 +298,29 @@ h4 {
     flex-direction: column;
   }
   .FirstChart {
-    width: 100px;
-    height: 300px;
-    display: block;
+    width: 100;
+    height: 300;
   }
 
   #SecondChart {
-    width: 555px;
-    height: 300px;
+    width: 555;
+    height: 300;
   }
   #ThirdChart {
-    width: 690px;
-    height: 300px;
+    width: 690;
+    height: 300;
   }
   #FourthChart {
-    width: 545px;
-    height: 300px;
+    width: 545;
+    height: 300;
   }
   #FiveChart {
-    width: 525px;
-    height: 300px;
+    width: 525;
+    height: 300;
   }
 
   #SixChart {
-    width: 500px;
-    height: 400px;
+    width: 500;
+    height: 400;
   }
 }

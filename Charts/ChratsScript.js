@@ -354,28 +354,3 @@ new Chart(document.getElementById("SevenChart"), {
 });
 
 
-
-var WidthScreen = screen.width
-
-if (WidthScreen <= 400) {
-  document.getElementById("FirstChart").style.width = "128px";
-  document.getElementById("FirstChart").style.height = "329px";
-
-  document.getElementById("SecondChart").style.width = "481px";
-  document.getElementById("SecondChart").style.height = "260px";
-
-  document.getElementById("ThirdChart").style.width = "528px";
-  document.getElementById("ThirdChart").style.height = "229px";
-
-  document.getElementById("FourthChart").style.width = "481px";
-  document.getElementById("FourthChart").style.height = "260px";
-
-  document.getElementById("FiveChart").style.width = "311px";
-  document.getElementById("FiveChart").style.height = "311px";
-
-  document.getElementById("FiveChart").style.width = "585px";
-  document.getElementById("FiveChart").style.height = "400px";
-
-  document.getElementById("SixChart").style.width = "700px";
-  document.getElementById("SixChart").style.height = "400px";
-}
