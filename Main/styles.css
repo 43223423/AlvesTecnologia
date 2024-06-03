@@ -396,7 +396,7 @@ th {
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 375px) {
   .subContainerChart {
     width: 380px;
     height: 210px;
