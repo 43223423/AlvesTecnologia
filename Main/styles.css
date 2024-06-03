@@ -340,22 +340,63 @@ th {
 @media screen and (max-width: 1342px) {
 }
 
-@media screen and (max-width: 560px) {
-  #UlChart {
-    display: flex;
-    flex-direction: column;
+@media screen and (max-width: 1342px) {
+  .subContainerChart {
+    width: 380px;
+    height: 210px;
   }
-  .containerSideBar {
-    width: 28%;
+  canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .IconUser {
+    display: none;
   }
   .selectLanguage {
     display: none;
   }
+  .logoSite {
+    width: 103px;
+  }
+
+  .containerSideBar {
+    width: 28%;
+  }
+  .ContainerListSidebar li h3 {
+    margin-left: 10px;
+    font-size: 15px;
+  }
+  .IconSidebar {
+    width: 20px;
+    height: 20px;
+  }
   #SubContainerNavbar {
+    margin-left: -10%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .subNavBarComponent {
+    width: 85%;
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+  #UlChart {
+    display: flex;
+    flex-direction: column;
+  }
+  .logoSite {
+    width: 90px;
+  }
+  .conatinerSideBarcontacts {
+    display: none;
+  }
+  table{
+    width: 360px;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
   .subContainerChart {
     width: 380px;
     height: 210px;
