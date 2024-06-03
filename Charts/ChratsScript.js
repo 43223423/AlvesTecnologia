@@ -1,245 +1,50 @@
-var FirstChart = new Chart(document.getElementById("FirstChart"), {
+function generateRandomData(days, min, max) {
+  let data = [];
+  for (let i = 0; i < days; i++) {
+    data.push(Math.floor(Math.random() * (max - min + 1)) + min);
+  }
+  return data;
+}
+
+// Dados de exemplo
+const labels = Array.from({ length: 30 }, (_, i) => `Dia ${i + 1}`);
+const dataA = generateRandomData(30, 50, 100); // Produção diária da Peça A
+const dataB = generateRandomData(30, 30, 80); // Produção diária da Peça B
+const dataC = generateRandomData(30, 20, 70); // Produção diária da Peça C
+
+const data = {
+  labels: labels,
+  datasets: [
+    {
+      label: "Peça A",
+      data: dataA,
+      borderColor: "rgba(75, 192, 192, 1)",
+      backgroundColor: "rgba(75, 192, 192, 0.2)",
+      borderWidth: 1,
+      fill: false,
+    },
+    {
+      label: "Peça B",
+      data: dataB,
+      borderColor: "rgba(153, 102, 255, 1)",
+      backgroundColor: "rgba(153, 102, 255, 0.2)",
+      borderWidth: 1,
+      fill: false,
+    },
+    {
+      label: "Peça C",
+      data: dataC,
+      borderColor: "rgba(255, 159, 64, 1)",
+      backgroundColor: "rgba(255, 159, 64, 0.2)",
+      borderWidth: 1,
+      fill: false,
+    },
+  ],
+};
+
+const config = {
   type: "line",
-  data: {
-    labels: "       ",
-    datasets: [
-      {
-        label: "D0",
-        data: [100, 12, 200, 20, 40, 30, 100, 20],
-        borderColor: "orange",
-        backgroundColor: "red",
-        // hidden: true,
-      },
-      {
-        label: "D1",
-        data: [100, 12, 200, 20, 40, 30, 100, 20],
-        borderColor: "orange",
-        backgroundColor: "orange",
-        // fill: "-1",
-      },
-      {
-        label: "D2",
-        data: [100, 12, 200, 20, 40, 30, 100, 20],
-        borderColor: "blue",
-        backgroundColor: "blue",
-        hidden: true,
-        fill: 1,
-      },
-      {
-        label: "D3",
-        data: [100, 12, 200, 20, 40, 30, 100, 20],
-        borderColor: "black",
-        backgroundColor: "black",
-        // fill: "-1",
-      },
-      {
-        label: "D4",
-        data: [100, 12, 200, 20, 40, 30, 100, 20],
-        borderColor: "pink",
-        backgroundColor: "pink",
-        // fill: "-1",
-      },
-      {
-        label: "D5",
-        data: [100, 12, 200, 20, 40, 30, 100, 20],
-        borderColor: "green",
-        backgroundColor: "green",
-        fill: "+2",
-      },
-    ],
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      y: {
-        stacked: true,
-      },
-    },
-    plugins: {
-      filler: {
-        propagate: false,
-      },
-      "samples-filler-analyser": {
-        target: "chart-analyser",
-      },
-    },
-    interaction: {
-      intersect: false,
-    },
-  },
-});
-
-var SecondChart = new Chart(document.getElementById("SecondChart"), {
-  type: "bar",
-  data: {
-    labels: "labels",
-    datasets: [
-      {
-        label: "My First Dataset",
-        data: [65, 59, 80, 81, 56, 55, 40],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-          "rgba(255, 205, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(201, 203, 207, 0.2)",
-        ],
-        borderColor: [
-          "rgb(255, 99, 132)",
-          "rgb(255, 159, 64)",
-          "rgb(255, 205, 86)",
-          "rgb(75, 192, 192)",
-          "rgb(54, 162, 235)",
-          "rgb(153, 102, 255)",
-          "rgb(201, 203, 207)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    responsive: true,
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  },
-});
-
-var ThridChart = new Chart(document.getElementById("ThirdChart"), {
-  type: "line",
-  data: {
-    labels: "       ",
-    datasets: [
-      {
-        label: "D0",
-        data: [10, 122, 300, 20, 210, 130, 30, 30],
-        borderColor: "orange",
-        backgroundColor: "red",
-        // hidden: true,
-      },
-      {
-        label: "D1",
-        data: [10, 122, 300, 20, 210, 130, 30, 30],
-        borderColor: "orange",
-        backgroundColor: "orange",
-        // fill: "-1",
-      },
-      {
-        label: "D2",
-        data: [10, 122, 300, 20, 210, 130, 30, 30],
-        borderColor: "blue",
-        backgroundColor: "blue",
-        hidden: true,
-        fill: 1,
-      },
-      {
-        label: "D3",
-        data: [10, 122, 300, 20, 210, 130, 30, 30],
-        borderColor: "black",
-        backgroundColor: "black",
-        // fill: "-1",
-      },
-      {
-        label: "D4",
-        data: [10, 122, 300, 20, 210, 130, 30, 30],
-        borderColor: "pink",
-        backgroundColor: "pink",
-        // fill: "-1",
-      },
-      {
-        label: "D5",
-        data: [10, 122, 300, 20, 210, 130, 30, 30],
-        borderColor: "green",
-        backgroundColor: "green",
-        fill: "+2",
-      },
-    ],
-  },
-  options: {
-    responsive: true,
-    scales: {
-      y: {
-        stacked: true,
-      },
-    },
-    plugins: {
-      filler: {
-        propagate: false,
-      },
-      "samples-filler-analyser": {
-        target: "chart-analyser",
-      },
-    },
-    interaction: {
-      intersect: false,
-    },
-  },
-});
-
-var FourChart = new Chart(document.getElementById("FourthChart"), {
-  type: "bar",
-  data: {
-    labels: "labels",
-    datasets: [
-      {
-        label: "My First Dataset",
-        data: [65, 59, 80, 81, 56, 55, 40],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-          "rgba(255, 205, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(201, 203, 207, 0.2)",
-        ],
-        borderColor: [
-          "rgb(255, 99, 132)",
-          "rgb(255, 159, 64)",
-          "rgb(255, 205, 86)",
-          "rgb(75, 192, 192)",
-          "rgb(54, 162, 235)",
-          "rgb(153, 102, 255)",
-          "rgb(201, 203, 207)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    responsive: true,
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  },
-});
-
-var FiveChart = new Chart(document.getElementById("FiveChart"), {
-  type: "pie",
-  data: {
-    labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
-    datasets: [
-      {
-        label: "Dataset 1",
-        data: [100, 20, 40, 10, 10],
-        backgroundColor: [
-          "red",
-          "rgba(255, 205, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(54, 162, 235, 1)",
-          "pink",
-        ],
-        fill: "+4",
-      },
-    ],
-  },
+  data: data,
   options: {
     responsive: true,
     plugins: {
@@ -248,127 +53,112 @@ var FiveChart = new Chart(document.getElementById("FiveChart"), {
       },
       title: {
         display: true,
-        text: "Chart.js Pie Chart",
+        text: "Produção Diária de Peças Automotivas",
       },
-    },
-  },
-});
-
-var SixChart = new Chart(document.getElementById("SixChart"), {
-  type: "line",
-  data: {
-    labels: "laels",
-    datasets: [
-      {
-        label: "My First dataset",
-        data: [100, 20, 40, 10],
-        borderColor: "red",
-        backgroundColor: "red",
-        fill: true,
-      },
-      {
-        label: "My Second dataset",
-        data: [100, 20, 40, 10],
-        borderColor: "blue",
-        backgroundColor: "blue",
-        fill: true,
-      },
-      {
-        label: "My Third dataset",
-        data: [100, 20, 40, 10],
-        borderColor: "green",
-        backgroundColor: "green",
-        fill: true,
-      },
-      {
-        label: "My Fourth dataset",
-        data: [100, 20, 40, 10],
-        borderColor: "yellow",
-        backgroundColor: "yellow",
-        fill: true,
-      },
-    ],
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-      },
-      tooltip: {
-        mode: "index",
-      },
-    },
-    interaction: {
-      mode: "nearest",
-      axis: "x",
-      intersect: false,
     },
     scales: {
       x: {
         title: {
           display: true,
-          text: "Month",
+          text: "Dias",
         },
       },
       y: {
-        stacked: true,
         title: {
           display: true,
-          text: "Value",
+          text: "Quantidade Produzida",
         },
       },
     },
   },
-});
+};
 
-new Chart(document.getElementById("SevenChart"), {
-  type: "pie",
-  data: {
-    labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
-    datasets: [
-      {
-        label: "Dataset 1",
-        data: [100, 20, 40, 10, 10],
-        backgroundColor: [
-          "red",
-          "rgba(255, 205, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(54, 162, 235, 1)",
-          "pink",
-        ],
-        fill: "+4",
-      },
-    ],
-  },
+const productionChart = new Chart(
+  document.getElementById("SecondChart"),
+  config
+);
+
+// Dados de exemplo
+const labelsThirdChart = ["Linha 1", "Linha 2", "Linha 3", "Linha 4", "Linha 5"];
+const dataThirdChart = {
+  labels: labelsThirdChart,
+  datasets: [
+    {
+      label: "Eficiência (%)",
+      data: [85, 70, 90, 75, 95], // Eficiência de cada linha de produção
+      backgroundColor: [
+        "rgba(75, 192, 192, 0.2)",
+        "rgba(153, 102, 255, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+        "rgba(54, 162, 235, 0.2)",
+        "rgba(255, 99, 132, 0.2)",
+      ],
+      borderColor: [
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 99, 132, 1)",
+      ],
+      borderWidth: 1,
+    },
+  ],
+};
+
+const configThirdChart = {
+  type: "bar",
+  data: dataThirdChart,
   options: {
     responsive: true,
     plugins: {
       legend: {
-        position: "top",
+        display: false,
       },
       title: {
         display: true,
-        text: "Chart.js Pie Chart",
+        text: "Comparação de Eficiência das Linhas de Produção",
+      },
+    },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: "Linhas de Produção",
+        },
+      },
+      y: {
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: "Eficiência (%)",
+        },
       },
     },
   },
-});
+};
 
-var WidthScreen = screen.width;
+const efficiencyChart = new Chart(
+  document.getElementById("ThirdChart"),
+  configThirdChart
+);
+document.addEventListener("DOMContentLoaded", function() {
+  const rows = document.querySelectorAll("#production-status tr");
 
-var ListCanvas = [
-  FirstChart,
-  SecondChart,
-  ThridChart,
-  FourChart,
-  FiveChart,
-  SixChart,
-];
+  rows.forEach(row => {
+      const produced = parseInt(row.cells[1].innerText);
+      const target = parseInt(row.cells[2].innerText);
+      const percentage = ((produced / target) * 100).toFixed(2);
+      
+      let statusClass = "";
+      if (percentage >= 80) {
+          statusClass = "status-good";
+      } else if (percentage >= 50) {
+          statusClass = "status-warning";
+      } else {
+          statusClass = "status-bad";
+      }
 
-if (WidthScreen <= 500) {
-  ListCanvas.forEach((item) => {
-    item.canvas.parentNode.style.width = "350px";
-    item.canvas.parentNode.style.heigth = "1000px";
+      row.cells[3].innerText = percentage + "%";
+      row.cells[3].classList.add(statusClass);
   });
-}
+});
