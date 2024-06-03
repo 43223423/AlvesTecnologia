@@ -35,5 +35,4 @@ function CloseSideBarContacts() {
 
 window.onload = () => {
   var win = document.getElementById("FirstChart");
-  win.removeAttribute("style");
 };
