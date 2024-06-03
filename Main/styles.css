@@ -60,13 +60,12 @@ body {
 
 .ContainerListSidebar {
   width: 100%;
+  height: 135px;
   margin-top: 25px;
 }
 .ContainerListSidebar li {
   display: flex;
   align-items: center;
-  margin-left: 20px;
-  margin-bottom: 20px;
 }
 .ContainerListSidebar li:hover {
   cursor: pointer;
@@ -251,7 +250,7 @@ h4 {
 
 #ContainerListSidebar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
 }
 #UlChart {
@@ -402,8 +401,8 @@ th {
 
 @media screen and (max-width: 375px) {
   .subContainerChart {
-    width: 380px;
-    height: 210px;
+    width: 355px;
+    height: 260px;
   }
   canvas {
     display: block;
