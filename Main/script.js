@@ -49,6 +49,6 @@ function NavigationWeb(url) {
   if (HostName === "127.0.0.1") {
     return (window.location.href = `http://127.0.0.1:${Port}/${url}`);
   } else if (HostName === "43223423.github.io") {
-    return (window.location.href = `https://43223423.github.io/AlvesTecnologia/${url}`);
+    return (window.location.href = `https://thiagohenrique847.github.io/AlvesTecnologia/${url}`);
   }
 }
